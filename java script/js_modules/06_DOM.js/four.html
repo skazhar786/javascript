@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>edit and remove elements</title>
+</head>
+<body>
+    <ul class="ul1">
+        <li>javaScript</li>
+    </ul>
+</body>
+<script>
+AddLanguage = (langname) => {
+     const li =  document.createElement('li');
+      li.innerHTML = `${langname}`
+      document.querySelector('.ul1').appendChild(li)
+}
+AddLanguage("python")
+AddLanguage("typescript")
+
+// creating another function to perform the same task but in optimize way
+
+addOptiLang = (langname) => {
+   const li = document.createElement('li')
+    li.appendChild(document.createTextNode(langname))
+  document.querySelector('.ul1') .appendChild(li)
+}
+addOptiLang("golang")
+
+// replacing an element value with a new value
+
+const secondlang = document.querySelector("li:nth-child(2)")
+console.log(secondlang);
+
+ const newUl = document.createElement('li').createTextNode('mojo')
+secondlang.replaceWith(newUl)
+</script>
+</html>
